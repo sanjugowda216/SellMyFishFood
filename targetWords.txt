@@ -4,3 +4,7 @@ water
 ocean
 lake 
 seafood
+fin
+gills
+reef
+tank
