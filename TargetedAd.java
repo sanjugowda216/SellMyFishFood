@@ -35,8 +35,8 @@ public class TargetedAd {
     /* your code here */
     
      /* step 2: Create a new DataCollector object and set the data to "socialMediaPostsSmall.txt" and "targetWords.txt"*/
-    DataCollector mydatacollector = new DataCollector("socialMediaPostsSmall.txt", "targetWords.txt");
-
+    DataCollector dataCollector = new DataCollector();
+    dataCollector.setData("socialMediaPostsSmall.txt", "targetWords.txt");
     /* step 3: Create a String variable to hold the names of all the user. (The first word of every post is 
      *     a person's username) */
     String username = "";
