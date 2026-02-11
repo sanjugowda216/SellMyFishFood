@@ -34,7 +34,26 @@ public class TargetedAd {
 
     /* your code here */
     
-     
-  }
+     /* step 2: Create a new DataCollector object and set the data to "socialMediaPostsSmall.txt" and "targetWords.txt"*/
+    DataCollector mydatacollector = new DataCollector("socialMediaPostsSmall.txt", "targetWords.txt");
+
+    /* step 3: Create a String variable to hold the names of all the user. (The first word of every post is 
+     *     a person's username) */
+    String username = "";
+    /* step 4: Compare each user's post to each target word. If a user mentions a target word, add their username to 
+     *     the String of users. Separate usernames with a space. */
+    for (String post:mydatacollector.getSocialMediaPosts()) {
+        for (String targetWord:mydatacollector.getTargetWords()) {
+            if (post.indexOf(targetWord)!=-1) {
+                String username = post.split(" ")[0];
+                if (!username.isEmpty() && !username.contains(username)) {
+                    username += username+" ";
+                }
+            }
+        }
+    }
+    /* step 5: Once you have all the users, use your DataCollector's prepareAdvertisement method to prepare a file 
+     *     with all users and the advertisement you will send them. */
+
 
 }
