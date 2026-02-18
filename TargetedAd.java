@@ -39,26 +39,22 @@ public class TargetedAd {
          * so you use the socialMediaPosts.txt. You should now have a larger file of
          * users to target.
          */
-
         /* your code here */
-
         /* step 2 */
         DataCollector dataCollector = new DataCollector();
         dataCollector.setData("socialMediaPosts.txt", "targetWords.txt");
         /* step 3 */
         String username = "";
         /* step 4 */
-        /* step 4 */
         String post = dataCollector.getNextPost();
-        while (!post.equals("NONE")) {
+        while (!post.equals("NONE")){
             String targetWord = dataCollector.getNextTargetWord();
-            while (!targetWord.equals("NONE")) {
-                if (post.indexOf(targetWord) != -1) {
+            while (!targetWord.equals("NONE")){
+                if (post.indexOf(targetWord) != -1){
                     String user = post.split(" ")[0];
-                    if (!username.contains(user + " ")){
-                        username += user + " ";}
-                    break;
-                }
+                    if (!username.contains(user+" ")){
+                        username += user+" ";}
+                    break;}
                 targetWord = dataCollector.getNextTargetWord();
             }
             post = dataCollector.getNextPost(); 
